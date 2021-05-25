@@ -1,0 +1,21 @@
+{
+  "name": "casual/utils",
+  "description": "Low performance Utils",
+  "require": {
+    "php": ">=7.2",
+    "chaz6chez/structure": "^1.0"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "chaz6chez",
+      "email": "250220719@qq.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "CasualMan\\" : "src",
+      "Protocols\\" : "src/JsonRpc2/Protocols"
+    }
+  }
+}
