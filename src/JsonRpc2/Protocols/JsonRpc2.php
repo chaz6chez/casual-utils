@@ -166,7 +166,7 @@ class JsonRpc2 {
      */
     public static function isJson($string) : bool
     {
-        self::$_data = @json_decode($string);
+        self::$_data = @json_decode($string, true);
         if(json_last_error() != JSON_ERROR_NONE){
             return false;
         }
