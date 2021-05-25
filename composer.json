@@ -14,7 +14,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "CasualMan\\" : "src",
+      "Utils\\" : "src",
       "Protocols\\" : "src/JsonRpc2/Protocols"
     }
   }
