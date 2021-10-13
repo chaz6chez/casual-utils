@@ -127,13 +127,12 @@ class JsonRpc2 {
      * @return RpcException|bool
      */
     protected static function _throw(JsonFmt $fmt, $data, $scene){
-        $fmt->clean(true);
-        $fmt->setScene($scene);
-        $fmt->create($data,true);
+        $fmt->scene($scene);
+        $fmt->create($data);
         # 如果有错误
         if($fmt->hasError()){
             # 抛出异常
-            $exception = $fmt->getError();
+            $exception = $fmt->getError()->getMessage();
             $exception = "Utils\JsonRpc2\Exception\\{$exception}";
             return new $exception;
         }

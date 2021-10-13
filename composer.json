@@ -3,6 +3,8 @@
   "description": "Low performance Utils",
   "require": {
     "php": ">=7.2",
+    "ext-mbstring": "*",
+    "ext-json": "*",
     "chaz6chez/structure": "^2.0"
   },
   "license": "MIT",
