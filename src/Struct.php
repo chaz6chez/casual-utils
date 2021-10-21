@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Until;
+namespace Utils;
 
 class Struct extends \Structure\Struct {
 
