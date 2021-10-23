@@ -66,15 +66,13 @@ class JsonRpc2 {
         self::$buffer = $buffer;
         $throw = (isset($params[0]) and is_bool($params[0])) ? $params[0] : false;
         # 不是json
-        if($throw){
-            if(self::isJson(trim($buffer)) === false){
-                # 抛出ParseError异常
-                throw new ParseErrorException();
-            }
-            # 空数组
-            if(!self::$_data){
-                throw new InvalidRequestException();
-            }
+        if(self::isJson(trim($buffer)) === false){
+            # 抛出ParseError异常
+            if($throw)throw new ParseErrorException();
+        }
+        # 空数组
+        if(!self::$_data){
+            if($throw)throw new InvalidRequestException();
         }
         return self::$_data ?? [];
     }
