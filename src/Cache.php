@@ -87,15 +87,7 @@ class Cache {
      */
     public static function id() :string
     {
-        if(extension_loaded('uuid') and function_exists('uuid_create')){
-            return uuid_create(1);
-        }
-        $chars = md5(uniqid(mt_rand(), true));
-        $uuid  = substr($chars,0,8) . '-';
-        $uuid .= substr($chars,8,4) . '-';
-        $uuid .= substr($chars,12,4) . '-';
-        $uuid .= substr($chars,16,4) . '-';
-        $uuid .= substr($chars,20,12);
-        return $uuid;
+
+        return Tools::UUID();
     }
 }
